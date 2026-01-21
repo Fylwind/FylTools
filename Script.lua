@@ -5,6 +5,6 @@ local function movementSpeed()
     return string.format("%d", ((isGliding and forwardSpeed or GetUnitSpeed("Player")) / BASE_MOVEMENT_SPEED) * 100)
 end
 
-function FylMovementSpeedMixin:OnLoad()
+function FylMovementSpeedMixin:OnUpdate()
     self.Text:SetText(format("mvspd=%d%%", movementSpeed()))
 end
